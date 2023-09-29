@@ -1,6 +1,7 @@
 package com.npsolutions.libros.repository;
 
 import com.npsolutions.libros.model.Autor;
+import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface AutorAPI {
     
     @GetMapping("/autorporlibro/{idLibro}")
-    public Autor getAutorByLibro(@PathVariable("idLibro") Integer idLibro);
+    public List<Autor> getAutorByLibro(@PathVariable("idLibro") Integer idLibro);
     
 }

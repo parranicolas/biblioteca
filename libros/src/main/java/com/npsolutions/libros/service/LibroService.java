@@ -28,8 +28,7 @@ public class LibroService implements ILibroService {
     public void saveLibro(Libro libro) {
         AutorDTO aut = new AutorDTO();
         List<AutorDTO> listaAutoresDTO = new ArrayList<>();
-        List<Autor>listaAutores = new ArrayList<>();
-        listaAutores.add(autorAPI.getAutorByLibro(libro.getIdLibro()));
+        List<Autor>listaAutores = autorAPI.getAutorByLibro(libro.getIdLibro());
         for(Autor a : listaAutores){
             aut.setNombreAutor(a.getNombreAutor());
             aut.setNacionalidad(a.getNacionalidad());

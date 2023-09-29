@@ -25,7 +25,7 @@ public class Libro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idLibro;
     private String titulo;
-    private String añoPublicacion;
+    private String anioPublicacion;
     private String descripcion;
     @JdbcTypeCode(SqlTypes.JSON)
     @ElementCollection(fetch = FetchType.EAGER)
