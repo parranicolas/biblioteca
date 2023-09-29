@@ -12,6 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Getter @Setter
@@ -25,7 +27,7 @@ public class Libro {
     private String titulo;
     private String añoPublicacion;
     private String descripcion;
-    
+    @JdbcTypeCode(SqlTypes.JSON)
     @ElementCollection(fetch = FetchType.EAGER)
     private List<AutorDTO> listaAutores;
             
